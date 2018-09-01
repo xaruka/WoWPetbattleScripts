@@ -1,0 +1,24 @@
+# Slot1: Tolai Hare Pup
+# Slot2: Zandalari Anklerenderer
+# Slot3: Albatross Chick
+change(Zandalari Anklerender:1211) [self(Tolai Hare Pup:730).dead]
+
+if [self(Tolai Hare Pup:730).active]
+  if [enemy(Shelly:2193).active]
+    use(Dodge:312) [self.aura(Whirlpool:512).duration = 1]
+    use(Burrow:159)
+    use(Flurry:360)
+  endif
+  use(Flurry:360)
+endif
+
+if [self(Zandalari Anklerender:1211).active]
+  use(Leap:364) [enemy.hp < 240]
+  use(Black Claw:919) [!enemy.aura(Black Claw:918).exists]
+  use(Hunting Party:921) [!enemy.aura(Underwater:830).exists]
+  use(Leap:364)
+endif
+
+if [self(Albatross Chick:1708).active]
+  use(Slicing Wind:420)
+endif
